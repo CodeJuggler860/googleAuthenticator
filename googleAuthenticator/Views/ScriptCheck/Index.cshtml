@@ -1,0 +1,18 @@
+﻿@model GoogleAuthentication.Models.ScriptInput
+
+<h2>Malicious Script Checker</h2>
+
+<form asp-action="Check" method="post">
+    <div class="form-group">
+        <label>Enter your script/code:</label>
+        <textarea asp-for="UserScript" class="form-control" rows="6"></textarea>
+    </div>
+    <button class="btn btn-primary mt-2" type="submit">Check</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Result))
+{
+    <div class="alert alert-info mt-3">
+        <strong>Result:</strong> @Model.Result
+    </div>
+}
